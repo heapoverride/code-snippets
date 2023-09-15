@@ -3,7 +3,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 
 /// <summary>
-/// Provides a unsafe method for reading raw data of a PE section. 
+/// Provides an unsafe method for reading PE section raw data. 
 /// Useful for reading embedded configuration data from a PE section.
 /// </summary>
 public static unsafe class Section
