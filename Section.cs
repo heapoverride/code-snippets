@@ -65,7 +65,7 @@ public static unsafe class Section
             }
 
             // Move to next section header
-            pSectionHeader = pSectionHeader + SECTION_HEADER_SIZE;
+            pSectionHeader += SECTION_HEADER_SIZE;
         }
 
         return null;
