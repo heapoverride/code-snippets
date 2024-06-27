@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using System.Runtime.InteropServices;
 
 /// <summary>
@@ -45,9 +44,7 @@ public static unsafe class Section
         for (int i = 0; i < numPESections; i++)
         {
             // Read section header
-            var _sectionName = Encoding.UTF8.GetString(pSectionHeader, SECTION_NAME_SIZE).TrimEnd('\0');
-
-            if (_sectionName == sectionName)
+            if (Marshal.PtrToStringAnsi(pSectionHeader, SECTION_NAME_SIZE) == sectionName)
             {
                 int virtualAddress = *(int*)(pSectionHeader + SECTION_VIRTUAL_ADDRESS_OFFSET);
                 int sizeRawData = *(int*)(pSectionHeader + SECTION_SIZE_RAW_DATA_OFFSET);
